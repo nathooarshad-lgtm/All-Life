@@ -175,7 +175,7 @@ const Dashboard: React.FC = () => {
       window.setTimeout(() => {
         void ctx.close();
       }, 320);
-    } catch (_error) {
+    } catch {
       // Audio cue is best-effort and should never block completion behavior.
     }
   };

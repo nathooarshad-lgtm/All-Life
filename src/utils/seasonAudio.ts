@@ -55,12 +55,12 @@ class SeasonAudio {
     if (this.seqTimer) { clearTimeout(this.seqTimer); this.seqTimer = null; }
     if (this.startTimer) { clearTimeout(this.startTimer); this.startTimer = null; }
     if (this.stopTimer) { clearTimeout(this.stopTimer); this.stopTimer = null; }
-    this.noises.forEach(n => { try { n.stop(); } catch (_) {} });
-    this.longOscs.forEach(o => { try { o.stop(); } catch (_) {} });
+    this.noises.forEach(n => { try { n.stop(); } catch { /* ignored */ } });
+    this.longOscs.forEach(o => { try { o.stop(); } catch { /* ignored */ } });
     this.noises = [];
     this.longOscs = [];
-    if (this.reverb) { try { this.reverb.disconnect(); } catch (_) {} this.reverb = null; }
-    if (this.melodyBus) { try { this.melodyBus.disconnect(); } catch (_) {} this.melodyBus = null; }
+    if (this.reverb) { try { this.reverb.disconnect(); } catch { /* ignored */ } this.reverb = null; }
+    if (this.melodyBus) { try { this.melodyBus.disconnect(); } catch { /* ignored */ } this.melodyBus = null; }
   }
 
   private addNoiseBand(type: BiquadFilterType, freq: number, q: number, vol: number, lfoRate = 0, lfoDepth = 0) {
