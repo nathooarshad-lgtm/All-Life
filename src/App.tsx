@@ -44,7 +44,7 @@ function AppRoutes() {
 function App() {
   return (
     <AppProvider>
-      <Router>
+      <Router basename="/All-Life/">
         <AppRoutes />
       </Router>
     </AppProvider>
